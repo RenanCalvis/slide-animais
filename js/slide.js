@@ -57,7 +57,6 @@ export default class Slide {
   }
 
   slidePosition(slide) {
-    // console.log(slide);
     const margin = (this.wrapper.offsetWidth - slide.offsetWidth) / 2;
     return -(slide.offsetLeft - margin);
   }
@@ -71,7 +70,7 @@ export default class Slide {
 
   skudesIndexNav(index) {
     const last = this.slideArray.length - 1;
-    console.log(last);
+
     this.index = {
       prev: index ? index - 1 : undefined,
       active: index,
@@ -80,13 +79,10 @@ export default class Slide {
   }
 
   changeSlide(index) {
-    console.log(index);
     const activeSlide = this.slideArray[index];
     this.moveSlide(this.slideArray[index].position);
     this.dist.finalPosition = activeSlide.position;
     this.skudesIndexNav(index);
-
-    console.log(this.index);
   }
 
   init() {
